@@ -14,6 +14,7 @@
 		14107ACA1C2EEF65004F152A /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14107AC91C2EEF65004F152A /* sansation.ttf */; };
 		14107ACC1C2EEF65004F152A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14107ACB1C2EEF65004F152A /* icon.png */; };
 		14107AD41C2F69C7004F152A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD21C2F69C7004F152A /* Game.cpp */; };
+		14107AD71C2F7151004F152A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD51C2F7151004F152A /* Player.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		14107ACB1C2EEF65004F152A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		14107AD21C2F69C7004F152A /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		14107AD31C2F69C7004F152A /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		14107AD51C2F7151004F152A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		14107AD61C2F7151004F152A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				14107AC21C2EEF65004F152A /* main.cpp */,
 				14107AD21C2F69C7004F152A /* Game.cpp */,
 				14107AD31C2F69C7004F152A /* Game.hpp */,
+				14107AD51C2F7151004F152A /* Player.cpp */,
+				14107AD61C2F7151004F152A /* Player.hpp */,
 			);
 			path = "sfml-blueprint";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14107AD71C2F7151004F152A /* Player.cpp in Sources */,
 				14107AD41C2F69C7004F152A /* Game.cpp in Sources */,
 				14107AC31C2EEF65004F152A /* main.cpp in Sources */,
 				14107AC01C2EEF65004F152A /* ResourcePath.mm in Sources */,

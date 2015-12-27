@@ -11,6 +11,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Player.hpp"
+
 class Game {
   public:
     Game(const Game&) = delete;
@@ -25,7 +27,7 @@ class Game {
     void render();
 
     sf::RenderWindow _window;
-    sf::CircleShape _player;
+    Player _player;
 };
 
 #endif /* Game_hpp */

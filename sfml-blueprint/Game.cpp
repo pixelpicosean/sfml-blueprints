@@ -10,15 +10,10 @@
 
 Game::Game():
   _window(sf::VideoMode(800, 600), "02 Game Archi"),
-  _player(150)
+  _player(200, 300)
 {
   // Force vsync for better result
   _window.setVerticalSyncEnabled(true);
-
-  // Game logic
-  _player.setFillColor(sf::Color::Blue);
-  _player.setPosition(10, 20);
-
 }
 
 void Game::run(int minFPS) {
@@ -47,13 +42,41 @@ void Game::run(int minFPS) {
 void Game::processEvents() {
   sf::Event event;
   while (_window.pollEvent(event)) {
-    if ((event.type == sf::Event::Closed) or (event.type == sf::Event::KeyPressed and event.key.code == sf::Keyboard::Escape)) {
+    if (event.type == sf::Event::Closed) {
       _window.close();
+    }
+
+    if (event.type == sf::Event::KeyPressed) {
+      if (event.key.code == sf::Keyboard::Escape) {
+        _window.close();
+      }
+      else if (event.key.code == sf::Keyboard::Up) {
+        _player.isMoving = true;
+      }
+      else if (event.key.code == sf::Keyboard::Left) {
+        _player.rotation = -1;
+      }
+      else if (event.key.code == sf::Keyboard::Right) {
+        _player.rotation = 1;
+      }
+    }
+    else if (event.type == sf::Event::KeyReleased) {
+      if (event.key.code == sf::Keyboard::Up) {
+        _player.isMoving = false;
+      }
+      else if (event.key.code == sf::Keyboard::Left) {
+        _player.rotation = 0;
+      }
+      else if (event.key.code == sf::Keyboard::Right) {
+        _player.rotation = 0;
+      }
     }
   }
 }
 
-void Game::update(sf::Time delta) {}
+void Game::update(sf::Time delta) {
+  _player.update(delta);
+}
 
 void Game::render() {
   _window.clear();
