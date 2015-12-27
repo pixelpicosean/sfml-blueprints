@@ -7,7 +7,7 @@
 
 int main(int argc, char const* argv[]) {
   Game game;
-  game.run();
+  game.run(30);
 
   return 0;
 }

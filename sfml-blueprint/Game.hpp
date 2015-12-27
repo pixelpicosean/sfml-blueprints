@@ -17,7 +17,7 @@ class Game {
     Game& operator=(const Game&) = delete;
     Game();
 
-    void run(int fps);
+    void run(int minFPS);
 
   private:
     void processEvents();

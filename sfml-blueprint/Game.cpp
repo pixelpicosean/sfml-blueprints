@@ -16,26 +16,24 @@ Game::Game():
   _player.setPosition(10, 20);
 }
 
-void Game::run(int fps) {
-  const sf::Time TIME_PER_FRAME = sf::seconds(1.0f / fps);
+void Game::run(int minFPS) {
+  const sf::Time TIME_PER_FRAME = sf::seconds(1.0f / minFPS);
 
   sf::Clock clock;
-  sf::Time timeSinceLastTick = sf::Time::Zero;
+  sf::Time timeSinceLastTick;
 
   while (_window.isOpen()) {
     processEvents();
 
-    bool repaint = false;
+    timeSinceLastTick = clock.restart();
 
-    timeSinceLastTick += clock.restart();
     while (timeSinceLastTick > TIME_PER_FRAME) {
       timeSinceLastTick -= TIME_PER_FRAME;
-      repaint = true;
-
       update(TIME_PER_FRAME);
     }
 
-    if (repaint) render();
+    update(timeSinceLastTick);
+    render();
   }
 }
 
