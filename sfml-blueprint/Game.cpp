@@ -12,16 +12,23 @@ Game::Game():
   _window(sf::VideoMode(800, 600), "02 Game Archi"),
   _player(150)
 {
+  // Force vsync for better result
+  _window.setVerticalSyncEnabled(true);
+
+  // Game logic
   _player.setFillColor(sf::Color::Blue);
   _player.setPosition(10, 20);
+
 }
 
 void Game::run(int minFPS) {
+  // Setup timer
   const sf::Time TIME_PER_FRAME = sf::seconds(1.0f / minFPS);
 
   sf::Clock clock;
   sf::Time timeSinceLastTick;
 
+  // Start game loop
   while (_window.isOpen()) {
     processEvents();
 
