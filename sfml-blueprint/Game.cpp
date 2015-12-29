@@ -14,6 +14,21 @@ Game::Game():
 {
   // Force vsync for better result
   _window.setVerticalSyncEnabled(true);
+
+  // Streams and handlers
+  auto whenToCloseWindow$ = events.filter([this] (const sf::Event& evt) {
+    return evt.type == sf::Event::Closed;
+  });
+  auto whenToPressEsp$ = events.filter([this](const sf::Event& evt) {
+    return evt.type == sf::Event::KeyPressed and evt.key.code == sf::Keyboard::Escape;
+  });
+
+  auto whenToQuit$ = whenToCloseWindow$.merge(whenToPressEsp$)
+    .map<bool>([](const sf::Event&) { return true; });
+
+  whenToQuit$.onValue([this](bool) {
+    _window.close();
+  });
 }
 
 void Game::run(int minFPS) {
@@ -42,15 +57,10 @@ void Game::run(int minFPS) {
 void Game::processEvents() {
   sf::Event event;
   while (_window.pollEvent(event)) {
-    if (event.type == sf::Event::Closed) {
-      _window.close();
-    }
+    events.emit(event);
 
     if (event.type == sf::Event::KeyPressed) {
-      if (event.key.code == sf::Keyboard::Escape) {
-        _window.close();
-      }
-      else if (event.key.code == sf::Keyboard::Up) {
+      if (event.key.code == sf::Keyboard::Up) {
         _player.isMoving = true;
       }
       else if (event.key.code == sf::Keyboard::Left) {

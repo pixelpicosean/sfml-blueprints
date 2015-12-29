@@ -11,6 +11,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "spira/spira.hpp"
+
 #include "Player.hpp"
 
 class Game {
@@ -28,6 +30,8 @@ class Game {
 
     sf::RenderWindow _window;
     Player _player;
+
+    spira::emitter<sf::Event> events;
 };
 
 #endif /* Game_hpp */
