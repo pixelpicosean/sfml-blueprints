@@ -15,6 +15,7 @@
 		14107ACC1C2EEF65004F152A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14107ACB1C2EEF65004F152A /* icon.png */; };
 		14107AD41C2F69C7004F152A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD21C2F69C7004F152A /* Game.cpp */; };
 		14107AD71C2F7151004F152A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD51C2F7151004F152A /* Player.cpp */; };
+		14CFA34C1C32376E0040E97C /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CFA34A1C32376E0040E97C /* timer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,13 @@
 		14107AD31C2F69C7004F152A /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		14107AD51C2F7151004F152A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		14107AD61C2F7151004F152A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		14CFA3451C32376E0040E97C /* emitter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emitter.hpp; sourceTree = "<group>"; };
+		14CFA3461C32376E0040E97C /* emitter_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emitter_impl.hpp; sourceTree = "<group>"; };
+		14CFA3471C32376E0040E97C /* spira.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = spira.hpp; sourceTree = "<group>"; };
+		14CFA3481C32376E0040E97C /* stream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stream.hpp; sourceTree = "<group>"; };
+		14CFA3491C32376E0040E97C /* stream_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stream_impl.hpp; sourceTree = "<group>"; };
+		14CFA34A1C32376E0040E97C /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
+		14CFA34B1C32376E0040E97C /* timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = timer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 			children = (
 				14107ABD1C2EEF64004F152A /* Supporting Files */,
 				14107AC41C2EEF65004F152A /* Resources */,
+				14CFA3441C32376E0040E97C /* spira */,
 				14107ABF1C2EEF65004F152A /* ResourcePath.mm */,
 				14107AC11C2EEF65004F152A /* ResourcePath.hpp */,
 				14107AC21C2EEF65004F152A /* main.cpp */,
@@ -93,6 +102,20 @@
 				14107ACB1C2EEF65004F152A /* icon.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		14CFA3441C32376E0040E97C /* spira */ = {
+			isa = PBXGroup;
+			children = (
+				14CFA3451C32376E0040E97C /* emitter.hpp */,
+				14CFA3461C32376E0040E97C /* emitter_impl.hpp */,
+				14CFA3471C32376E0040E97C /* spira.hpp */,
+				14CFA3481C32376E0040E97C /* stream.hpp */,
+				14CFA3491C32376E0040E97C /* stream_impl.hpp */,
+				14CFA34A1C32376E0040E97C /* timer.cpp */,
+				14CFA34B1C32376E0040E97C /* timer.hpp */,
+			);
+			path = spira;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14107AD71C2F7151004F152A /* Player.cpp in Sources */,
+				14CFA34C1C32376E0040E97C /* timer.cpp in Sources */,
 				14107AD41C2F69C7004F152A /* Game.cpp in Sources */,
 				14107AC31C2EEF65004F152A /* main.cpp in Sources */,
 				14107AC01C2EEF65004F152A /* ResourcePath.mm in Sources */,
@@ -323,6 +347,7 @@
 				14107AD11C2EEF65004F152A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
