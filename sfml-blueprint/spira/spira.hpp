@@ -32,6 +32,5 @@
 
 #include "./stream.hpp"
 #include "./emitter.hpp"
-#include "./timer.hpp"
 
 #endif
