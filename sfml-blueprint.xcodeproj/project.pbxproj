@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		14107AC01C2EEF65004F152A /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14107ABF1C2EEF65004F152A /* ResourcePath.mm */; };
 		14107AC31C2EEF65004F152A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AC21C2EEF65004F152A /* main.cpp */; };
-		14107AC61C2EEF65004F152A /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14107AC51C2EEF65004F152A /* cute_image.jpg */; };
-		14107AC81C2EEF65004F152A /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 14107AC71C2EEF65004F152A /* nice_music.ogg */; };
-		14107ACA1C2EEF65004F152A /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14107AC91C2EEF65004F152A /* sansation.ttf */; };
-		14107ACC1C2EEF65004F152A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14107ACB1C2EEF65004F152A /* icon.png */; };
 		14107AD41C2F69C7004F152A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD21C2F69C7004F152A /* Game.cpp */; };
 		14107AD71C2F7151004F152A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD51C2F7151004F152A /* Player.cpp */; };
+		14DE59771C3378E60044258A /* ResourceManager_impl.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DE59751C3378E60044258A /* ResourceManager_impl.hpp */; };
+		14DE59791C3388FB0044258A /* media in Resources */ = {isa = PBXBuildFile; fileRef = 14DE59781C3388FB0044258A /* media */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +21,6 @@
 		14107ABF1C2EEF65004F152A /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		14107AC11C2EEF65004F152A /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		14107AC21C2EEF65004F152A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		14107AC51C2EEF65004F152A /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		14107AC71C2EEF65004F152A /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		14107AC91C2EEF65004F152A /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		14107ACB1C2EEF65004F152A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		14107AD21C2F69C7004F152A /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		14107AD31C2F69C7004F152A /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		14107AD51C2F7151004F152A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
@@ -36,6 +30,9 @@
 		14CFA3471C32376E0040E97C /* spira.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = spira.hpp; sourceTree = "<group>"; };
 		14CFA3481C32376E0040E97C /* stream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stream.hpp; sourceTree = "<group>"; };
 		14CFA3491C32376E0040E97C /* stream_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = stream_impl.hpp; sourceTree = "<group>"; };
+		14DE59751C3378E60044258A /* ResourceManager_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager_impl.hpp; sourceTree = "<group>"; };
+		14DE59761C3378E60044258A /* ResourceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager.hpp; sourceTree = "<group>"; };
+		14DE59781C3388FB0044258A /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = media; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +65,8 @@
 		14107ABC1C2EEF64004F152A /* sfml-blueprint */ = {
 			isa = PBXGroup;
 			children = (
+				14DE59781C3388FB0044258A /* media */,
 				14107ABD1C2EEF64004F152A /* Supporting Files */,
-				14107AC41C2EEF65004F152A /* Resources */,
 				14CFA3441C32376E0040E97C /* spira */,
 				14107ABF1C2EEF65004F152A /* ResourcePath.mm */,
 				14107AC11C2EEF65004F152A /* ResourcePath.hpp */,
@@ -78,6 +75,8 @@
 				14107AD31C2F69C7004F152A /* Game.hpp */,
 				14107AD51C2F7151004F152A /* Player.cpp */,
 				14107AD61C2F7151004F152A /* Player.hpp */,
+				14DE59761C3378E60044258A /* ResourceManager.hpp */,
+				14DE59751C3378E60044258A /* ResourceManager_impl.hpp */,
 			);
 			path = "sfml-blueprint";
 			sourceTree = "<group>";
@@ -88,17 +87,6 @@
 				14107ABE1C2EEF65004F152A /* sfml-blueprint-Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		14107AC41C2EEF65004F152A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				14107AC51C2EEF65004F152A /* cute_image.jpg */,
-				14107AC71C2EEF65004F152A /* nice_music.ogg */,
-				14107AC91C2EEF65004F152A /* sansation.ttf */,
-				14107ACB1C2EEF65004F152A /* icon.png */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		14CFA3441C32376E0040E97C /* spira */ = {
@@ -170,10 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14107ACC1C2EEF65004F152A /* icon.png in Resources */,
-				14107ACA1C2EEF65004F152A /* sansation.ttf in Resources */,
-				14107AC81C2EEF65004F152A /* nice_music.ogg in Resources */,
-				14107AC61C2EEF65004F152A /* cute_image.jpg in Resources */,
+				14DE59791C3388FB0044258A /* media in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DE59771C3378E60044258A /* ResourceManager_impl.hpp in Sources */,
 				14107AD71C2F7151004F152A /* Player.cpp in Sources */,
 				14107AD41C2F69C7004F152A /* Game.cpp in Sources */,
 				14107AC31C2EEF65004F152A /* main.cpp in Sources */,

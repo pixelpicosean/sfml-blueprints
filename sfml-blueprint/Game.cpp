@@ -9,6 +9,7 @@
 #include "Game.hpp"
 
 Game::Game():
+  textures(),
   _window(sf::VideoMode(800, 600), "02 Game Archi"),
   _player(200, 300)
 {
@@ -32,6 +33,11 @@ Game::Game():
 }
 
 void Game::run(int minFPS) {
+  // Initialize
+  initTextures();
+
+  _player.setTexture(textures.get(TEXTURES::PLAYER));
+
   // Setup timer
   const sf::Time TIME_PER_FRAME = sf::seconds(1.0f / minFPS);
 
@@ -94,4 +100,8 @@ void Game::render() {
   _window.draw(_player);
 
   _window.display();
+}
+
+void Game::initTextures() {
+  textures.load(TEXTURES::PLAYER, resourcePath() + "ship.png");
 }

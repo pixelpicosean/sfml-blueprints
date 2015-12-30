@@ -12,10 +12,16 @@
 #include <SFML/Graphics.hpp>
 
 #include "spira/spira.hpp"
+#include "ResourceManager.hpp"
+#include "ResourcePath.hpp"
 
 #include "Player.hpp"
 
 class Game {
+  public:
+    enum TEXTURES: int { PLAYER };
+    ResourceManager<sf::Texture, int> textures;
+
   public:
     Game(const Game&) = delete;
     Game& operator=(const Game&) = delete;
@@ -27,6 +33,8 @@ class Game {
     void processEvents();
     void update(sf::Time delta);
     void render();
+
+    void initTextures();
 
     sf::RenderWindow _window;
     Player _player;

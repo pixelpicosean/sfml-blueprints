@@ -10,12 +10,13 @@
 #define Player_hpp
 
 #include <SFML/Graphics.hpp>
+#include <cmath>
 
 class Player: public sf::Drawable {
   public:
     bool isMoving = false;
     int rotation = 0;
-    float speed = 100;
+    float speed = 200.0f;
 
   public:
     Player(const Player&) = delete;
@@ -28,6 +29,8 @@ class Player: public sf::Drawable {
     }
 
     void update(sf::Time dt);
+
+    void setTexture(const sf::Texture& tex);
 
   private:
     sf::RectangleShape _shape;
