@@ -23,9 +23,9 @@ class Player: public sf::Drawable {
     Player& operator=(const Player&) = delete;
     Player(float x, float y);
 
-    template <typename ...Args>
-    void setPosition(Args&& ...args) {
-      _shape.setPosition(std::forward<Args>(args)...);
+    template <typename ... Args>
+    void setPosition(Args&& ... args) {
+      _sprite.setPosition(std::forward<Args>(args) ...);
     }
 
     void update(sf::Time dt);
@@ -33,7 +33,7 @@ class Player: public sf::Drawable {
     void setTexture(const sf::Texture& tex);
 
   private:
-    sf::RectangleShape _shape;
+    sf::Sprite _sprite;
     sf::Vector2f _velocity;
 
   private:
