@@ -33,8 +33,8 @@ namespace spira {
     std::chrono::steady_clock::time_point init;
     std::chrono::steady_clock::time_point curr;
     double fps;
-    unsigned long long int frame;
-    unsigned long long int time;
+    uint64_t frame;
+    uint64_t time;
   };
 
   timer::timer(double fps) : pimpl(std::shared_ptr<impl>(new impl())) {
@@ -70,7 +70,7 @@ namespace spira {
     this->pimpl->curr = std::chrono::steady_clock::now();
     std::chrono::nanoseconds duration = (this->pimpl->curr - this->pimpl->init);
     this->pimpl->time = duration.count();
-    unsigned long long int now = ((this->pimpl->time * this->pimpl->fps) / 1000000000);
+    uint64_t now = ((this->pimpl->time * this->pimpl->fps) / 1000000000);
     if(now > this->pimpl->frame) {
       while(now > this->pimpl->frame) this->emit(++this->pimpl->frame);
     }

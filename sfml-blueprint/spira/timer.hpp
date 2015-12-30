@@ -31,11 +31,12 @@
 
 #include <chrono>
 #include <memory>
+#include <cstdint>
 #include "./stream.hpp"
 #include "./emitter.hpp"
 
 namespace spira {
-  class timer : public emitter<unsigned long long int> {
+  class timer : public emitter<uint64_t> {
     public:
       timer(double fps=1000);
       timer(const timer& other);
