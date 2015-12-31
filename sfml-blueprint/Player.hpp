@@ -18,10 +18,12 @@ class Player: public sf::Drawable {
     int rotation = 0;
     float speed = 200.0f;
 
+    sf::Vector2f anchor = { 0.5f, 0.5f };
+
   public:
     Player(const Player&) = delete;
     Player& operator=(const Player&) = delete;
-    Player(float x, float y);
+    Player();
 
     template <typename ... Args>
     void setPosition(Args&& ... args) {

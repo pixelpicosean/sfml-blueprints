@@ -8,21 +8,24 @@
 
 #include "Game.hpp"
 
-Game::Game():
-  textures(),
-  _window(sf::VideoMode(800, 600), "02 Game Archi"),
-  _player(200, 300)
+bool isCloseWindow(const sf::Event& evt) {
+  return evt.type == sf::Event::Closed;
+}
+
+bool pressedEsc(const sf::Event& evt) {
+  return evt.type == sf::Event::KeyPressed and evt.key.code == sf::Keyboard::Escape;
+}
+
+Game::Game(int w, int h):
+  width(w), height(h),
+  _window(sf::VideoMode(w, h), "Asteroid")
 {
   // Force vsync for better result
   _window.setVerticalSyncEnabled(true);
 
   // Streams and handlers
-  auto whenToCloseWindow$ = events.filter([this] (const sf::Event& evt) {
-    return evt.type == sf::Event::Closed;
-  });
-  auto whenToPressEsp$ = events.filter([this](const sf::Event& evt) {
-    return evt.type == sf::Event::KeyPressed and evt.key.code == sf::Keyboard::Escape;
-  });
+  auto whenToCloseWindow$ = events.filter(isCloseWindow);
+  auto whenToPressEsp$ = events.filter(pressedEsc);
 
   auto whenToQuit$ = whenToCloseWindow$.merge(whenToPressEsp$)
     .map<bool>([](const sf::Event&) { return true; });
@@ -37,6 +40,7 @@ void Game::run(int minFPS) {
   initTextures();
 
   _player.setTexture(textures.get(TEXTURES::PLAYER));
+  _player.setPosition(width / 2, height / 2);
 
   // Setup timer
   const sf::Time TIME_PER_FRAME = sf::seconds(1.0f / minFPS);

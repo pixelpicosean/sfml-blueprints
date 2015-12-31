@@ -8,10 +8,7 @@
 
 #include "Player.hpp"
 
-Player::Player(float x, float y) {
-  _sprite.setOrigin(50, 38);
-  _sprite.move(x, y);
-}
+Player::Player() {}
 
 void Player::update(sf::Time dt) {
   float sec = dt.asSeconds();
@@ -33,6 +30,8 @@ void Player::update(sf::Time dt) {
 
 void Player::setTexture(const sf::Texture &tex) {
   _sprite.setTexture(tex);
+  auto s = tex.getSize();
+  _sprite.setOrigin(s.x * anchor.x, s.y * anchor.y);
 }
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const {

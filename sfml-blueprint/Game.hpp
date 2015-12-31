@@ -22,10 +22,13 @@ class Game {
     enum TEXTURES: int { PLAYER };
     ResourceManager<sf::Texture, int> textures;
 
+    const int width;
+    const int height;
+
   public:
     Game(const Game&) = delete;
     Game& operator=(const Game&) = delete;
-    Game();
+    Game(int w = 640, int h = 480);
 
     void run(int minFPS);
 
