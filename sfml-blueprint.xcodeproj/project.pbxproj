@@ -11,6 +11,7 @@
 		14107AC31C2EEF65004F152A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AC21C2EEF65004F152A /* main.cpp */; };
 		14107AD41C2F69C7004F152A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD21C2F69C7004F152A /* Game.cpp */; };
 		14107AD71C2F7151004F152A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD51C2F7151004F152A /* Player.cpp */; };
+		14778D341C41F01F008FE691 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14778D321C41F01F008FE691 /* Scene.cpp */; };
 		14DE59771C3378E60044258A /* ResourceManager_impl.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DE59751C3378E60044258A /* ResourceManager_impl.hpp */; };
 		14DE59791C3388FB0044258A /* media in Resources */ = {isa = PBXBuildFile; fileRef = 14DE59781C3388FB0044258A /* media */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 		14107AD31C2F69C7004F152A /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		14107AD51C2F7151004F152A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		14107AD61C2F7151004F152A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		14778D321C41F01F008FE691 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		14778D331C41F01F008FE691 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
 		14CFA3451C32376E0040E97C /* emitter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emitter.hpp; sourceTree = "<group>"; };
 		14CFA3461C32376E0040E97C /* emitter_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emitter_impl.hpp; sourceTree = "<group>"; };
 		14CFA3471C32376E0040E97C /* spira.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = spira.hpp; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				14107AD61C2F7151004F152A /* Player.hpp */,
 				14DE59761C3378E60044258A /* ResourceManager.hpp */,
 				14DE59751C3378E60044258A /* ResourceManager_impl.hpp */,
+				14778D321C41F01F008FE691 /* Scene.cpp */,
+				14778D331C41F01F008FE691 /* Scene.hpp */,
 			);
 			path = "sfml-blueprint";
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14778D341C41F01F008FE691 /* Scene.cpp in Sources */,
 				14DE59771C3378E60044258A /* ResourceManager_impl.hpp in Sources */,
 				14107AD71C2F7151004F152A /* Player.cpp in Sources */,
 				14107AD41C2F69C7004F152A /* Game.cpp in Sources */,
