@@ -11,13 +11,15 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Data.h"
+
 class Scene;
 class Actor : public sf::Drawable {
   public:
     Actor(const Actor&) = delete;
     Actor& operator=(const Actor&) = delete;
 
-    Actor(int texID, Scene* scene);
+    Actor(Data::TEXTURES texID, Scene* scene);
     virtual ~Actor();
 
     virtual bool isAlive() const;
