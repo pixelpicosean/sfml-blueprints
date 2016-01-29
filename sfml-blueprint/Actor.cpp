@@ -8,7 +8,7 @@
 
 #include "Actor.hpp"
 
-Actor::Actor(Data::TEXTURES texID, Scene* scene) {
+Actor::Actor(Data::TEXTURES texID, Scene& scene) {
   sf::Texture& tex = Data::textures.get(texID);
   _sprite.setTexture(tex);
   _sprite.setOrigin(tex.getSize().x / 2, tex.getSize().y / 2);

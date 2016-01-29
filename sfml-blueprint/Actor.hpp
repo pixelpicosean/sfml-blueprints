@@ -19,7 +19,7 @@ class Actor : public sf::Drawable {
     Actor(const Actor&) = delete;
     Actor& operator=(const Actor&) = delete;
 
-    Actor(Data::TEXTURES texID, Scene* scene);
+    Actor(Data::TEXTURES texID, Scene& scene);
     virtual ~Actor();
 
     virtual bool isAlive() const;
