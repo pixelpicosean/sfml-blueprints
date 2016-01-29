@@ -7,33 +7,56 @@
 //
 
 #include "Player.hpp"
+#include "Scene.hpp"
+#include "Collision.hpp"
 
-Player::Player() {}
+Player::Player(Scene& scene): Actor(Data::TEXTURES::PLAYER, scene) {
+  // TODO: setup input
+}
+
+bool Player::isCollide(const Actor &other) const {
+  if (dynamic_cast<const ShootPlayer *>(&other) == nullptr) {
+    return Collision::circleTest(this->_sprite, other._sprite);
+  }
+
+  return false;
+}
 
 void Player::update(sf::Time dt) {
-  float sec = dt.asSeconds();
+  float seconds = dt.asSeconds();
+  this->_timeSinceLastShoot += dt;
 
-  if (rotation != 0) {
-    float angle = (rotation > 0 ? 1 : -1) * 180 * sec;
-    _sprite.rotate(angle);
+  if (this->_rotation != 0) {
+    float angle = this->_rotation * 250 * seconds;
+    this->_sprite.rotate(angle);
   }
 
-  if (isMoving) {
-    float angle = _sprite.getRotation() / 180 * M_PI - M_PI_2;
+  if (this->_isMoving) {
+    float angle = this->_sprite.getRotation() / 180 * M_PI - M_PI_2;
+    this->_impulse += sf::Vector2f(std::cos(angle), std::sin(angle)) * 300.0f * seconds;
+  }
 
-    _velocity.x = std::cos(angle) * speed;
-    _velocity.y = std::sin(angle) * speed;
+  this->_sprite.move(this->_impulse);
+}
 
-    _sprite.move(_velocity.x * sec, _velocity.y * sec);
+void Player::shoot() {
+  if (this->_timeSinceLastShoot > sf::seconds(0.3)) {
+    this->_scene.add(new ShootPlayer(*this));
+    this->_timeSinceLastShoot = sf::Time::Zero;
   }
 }
 
-void Player::setTexture(const sf::Texture &tex) {
-  _sprite.setTexture(tex);
-  auto s = tex.getSize();
-  _sprite.setOrigin(s.x * anchor.x, s.y * anchor.y);
+void Player::goToHyperspace() {
+  this->_impulse = sf::Vector2f(0, 0);
+  this->setPosition(random(0, this->_scene.getX()), random(0, this->_scene.getY()));
+
+  // TODO: play jump sound
 }
 
-void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-  target.draw(_sprite, states);
+void Player::onDestroy() {
+  Actor::onDestroy();
+
+  Data::lives -= 1;
+
+  // TODO: play boom sound
 }

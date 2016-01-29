@@ -19,13 +19,19 @@ class Data {
     Data(const Data&) = delete;
     Data& operator=(const Data&) = delete;
 
+    static void init();
+
+
+    // Resource data
     enum TEXTURES : int {
       PLAYER,
     };
 
     static ResourceManager<sf::Texture, int> textures;
 
-    static void init();
+    // Persistent data
+    static int lives;
+
 
   private:
     static void initTextures();
@@ -35,6 +41,8 @@ ResourceManager<sf::Texture, int> Data::textures;
 
 void Data::init() {
   Data::initTextures();
+
+  Data::lives = 3;
 }
 
 void Data::initTextures() {

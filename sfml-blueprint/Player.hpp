@@ -9,37 +9,27 @@
 #ifndef Player_hpp
 #define Player_hpp
 
-#include <SFML/Graphics.hpp>
 #include <cmath>
 
-class Player: public sf::Drawable {
-  public:
-    bool isMoving = false;
-    int rotation = 0;
-    float speed = 200.0f;
+#include "Actor.hpp"
 
-    sf::Vector2f anchor = { 0.5f, 0.5f };
-
+class Player: public Actor {
   public:
     Player(const Player&) = delete;
     Player& operator=(const Player&) = delete;
-    Player();
+    Player(Scene& scene);
 
-    template <typename ... Args>
-    void setPosition(Args&& ... args) {
-      _sprite.setPosition(std::forward<Args>(args) ...);
-    }
-
-    void update(sf::Time dt);
-
-    void setTexture(const sf::Texture& tex);
+    bool isCollide(const Actor& other) const override;
+    void update(sf::Time dt) override;
+    void processEvents();
+    void shoot();
+    void goToHyperspace();
+    void onDestroy() override;
 
   private:
-    sf::Sprite _sprite;
-    sf::Vector2f _velocity;
-
-  private:
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+    bool _isMoving = false;
+    int _rotation = 0;
+    sf::Time _timeSinceLastShoot;
 };
 
 #endif /* Player_hpp */
