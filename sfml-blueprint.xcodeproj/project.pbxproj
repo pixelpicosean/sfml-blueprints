@@ -28,6 +28,7 @@
 		14107AD31C2F69C7004F152A /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		14107AD51C2F7151004F152A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		14107AD61C2F7151004F152A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		1426EECD1C5B57F40017B486 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		14778D321C41F01F008FE691 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
 		14778D331C41F01F008FE691 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
 		148AE16F1C4B3EB70014A130 /* Collision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 				148AE1701C4B3EB70014A130 /* Collision.hpp */,
 				148AE1721C4B410C0014A130 /* Actor.cpp */,
 				148AE1731C4B410C0014A130 /* Actor.hpp */,
+				1426EECD1C5B57F40017B486 /* Data.h */,
 			);
 			path = "sfml-blueprint";
 			sourceTree = "<group>";
