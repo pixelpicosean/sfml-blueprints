@@ -13,7 +13,7 @@
 
 #include "spira/spira.hpp"
 
-#include "Data.h"
+#include "Data.hpp"
 
 #include "Player.hpp"
 

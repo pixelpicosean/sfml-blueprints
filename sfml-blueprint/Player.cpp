@@ -9,6 +9,7 @@
 #include "Player.hpp"
 #include "Scene.hpp"
 #include "Collision.hpp"
+#include "Utils.hpp"
 
 Player::Player(Scene& scene): Actor(Data::TEXTURES::PLAYER, scene) {
   // TODO: setup input
@@ -48,7 +49,7 @@ void Player::shoot() {
 
 void Player::goToHyperspace() {
   this->_impulse = sf::Vector2f(0, 0);
-  this->setPosition(random(0, this->_scene.getX()), random(0, this->_scene.getY()));
+  this->setPosition(lp::random(0, this->_scene.getX()), lp::random(0, this->_scene.getY()));
 
   // TODO: play jump sound
 }

@@ -7,6 +7,7 @@
 //
 
 #include "Scene.hpp"
+#include "Actor.hpp"
 
 Scene::Scene(float x, float y):
   _x(x), _y(y)

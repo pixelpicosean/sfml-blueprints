@@ -32,6 +32,9 @@ class Data {
     // Persistent data
     static int lives;
 
+    static int score;
+    static void addScore(int score);
+
 
   private:
     static void initTextures();
@@ -42,7 +45,12 @@ ResourceManager<sf::Texture, int> Data::textures;
 void Data::init() {
   Data::initTextures();
 
+  Data::score = 0;
   Data::lives = 3;
+}
+
+void Data::addScore(int score) {
+  Data::score += score;
 }
 
 void Data::initTextures() {

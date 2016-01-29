@@ -11,7 +11,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Data.h"
+#include "Data.hpp"
 
 class Scene;
 class Actor : public sf::Drawable {
