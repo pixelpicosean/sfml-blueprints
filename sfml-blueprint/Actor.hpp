@@ -36,7 +36,7 @@ class Actor : public sf::Drawable {
   protected:
     sf::Sprite _sprite;
     sf::Vector2f _impulse;
-    Scene *_scene;
+    Scene& _scene;
     bool _alive;
 
   private:
