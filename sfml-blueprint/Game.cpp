@@ -37,9 +37,9 @@ Game::Game(int w, int h):
 
 void Game::run(int minFPS) {
   // Initialize
-  initTextures();
+  Data::init();
 
-  _player.setTexture(textures.get(TEXTURES::PLAYER));
+  _player.setTexture(Data::textures.get(Data::TEXTURES::PLAYER));
   _player.setPosition(width / 2, height / 2);
 
   // Setup timer
@@ -104,8 +104,4 @@ void Game::render() {
   _window.draw(_player);
 
   _window.display();
-}
-
-void Game::initTextures() {
-  textures.load(TEXTURES::PLAYER, resourcePath() + "ship.png");
 }

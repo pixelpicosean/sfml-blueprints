@@ -12,16 +12,13 @@
 #include <SFML/Graphics.hpp>
 
 #include "spira/spira.hpp"
-#include "ResourceManager.hpp"
-#include "ResourcePath.hpp"
+
+#include "Data.h"
 
 #include "Player.hpp"
 
 class Game {
   public:
-    enum TEXTURES: int { PLAYER };
-    ResourceManager<sf::Texture, int> textures;
-
     const int width;
     const int height;
 
@@ -36,8 +33,6 @@ class Game {
     void processEvents();
     void update(sf::Time delta);
     void render();
-
-    void initTextures();
 
     sf::RenderWindow _window;
     Player _player;
