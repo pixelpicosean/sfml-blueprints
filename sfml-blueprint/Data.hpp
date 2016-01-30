@@ -35,6 +35,9 @@ class Data {
     static int score;
     static void addScore(int score);
 
+    // Session data
+    static Actor *player;
+
 
   private:
     static void initTextures();
@@ -45,8 +48,12 @@ ResourceManager<sf::Texture, int> Data::textures;
 void Data::init() {
   Data::initTextures();
 
+  // Persistent
   Data::score = 0;
   Data::lives = 3;
+
+  // Session
+  Data::player = nullptr;
 }
 
 void Data::addScore(int score) {
