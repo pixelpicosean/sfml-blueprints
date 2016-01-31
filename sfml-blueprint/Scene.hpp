@@ -12,7 +12,8 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 
-class Actor;
+#include "Actor.hpp"
+
 class Scene : public sf::Drawable {
   public:
     Scene(float x, float y);

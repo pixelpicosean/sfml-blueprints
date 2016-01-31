@@ -11,12 +11,12 @@
 
 #include <cmath>
 
-namespace lp {
+struct lp {
 
-  float random(float min, float max) {
+  static float random(float min, float max) {
     return (std::rand() * 1.0 / RAND_MAX) * (max - min) + min;
   }
 
-}
+};
 
 #endif /* Utils_h */

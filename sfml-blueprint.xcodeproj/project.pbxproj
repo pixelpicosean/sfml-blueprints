@@ -15,6 +15,10 @@
 		14778D341C41F01F008FE691 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14778D321C41F01F008FE691 /* Scene.cpp */; };
 		148AE1711C4B3EB70014A130 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 148AE16F1C4B3EB70014A130 /* Collision.cpp */; };
 		148AE1741C4B410C0014A130 /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 148AE1721C4B410C0014A130 /* Actor.cpp */; };
+		14AF05C91C5D9C67006DAA43 /* Shoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AF05C71C5D9C67006DAA43 /* Shoot.cpp */; };
+		14AF05CB1C5DA927006DAA43 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AF05CA1C5DA927006DAA43 /* Data.cpp */; };
+		14AF05D01C5DB290006DAA43 /* Saucer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AF05CE1C5DB290006DAA43 /* Saucer.cpp */; };
+		14AF05D31C5DB316006DAA43 /* Meteor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AF05D11C5DB316006DAA43 /* Meteor.cpp */; };
 		14DE59771C3378E60044258A /* ResourceManager_impl.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DE59751C3378E60044258A /* ResourceManager_impl.hpp */; };
 		14DE59791C3388FB0044258A /* media in Resources */ = {isa = PBXBuildFile; fileRef = 14DE59781C3388FB0044258A /* media */; };
 /* End PBXBuildFile section */
@@ -39,6 +43,14 @@
 		148AE1701C4B3EB70014A130 /* Collision.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Collision.hpp; sourceTree = "<group>"; };
 		148AE1721C4B410C0014A130 /* Actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Actor.cpp; sourceTree = "<group>"; };
 		148AE1731C4B410C0014A130 /* Actor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Actor.hpp; sourceTree = "<group>"; };
+		14AF05C71C5D9C67006DAA43 /* Shoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shoot.cpp; sourceTree = "<group>"; };
+		14AF05C81C5D9C67006DAA43 /* Shoot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shoot.hpp; sourceTree = "<group>"; };
+		14AF05CA1C5DA927006DAA43 /* Data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Data.cpp; sourceTree = "<group>"; };
+		14AF05CC1C5DA9D6006DAA43 /* Actor_impl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Actor_impl.hpp; sourceTree = "<group>"; };
+		14AF05CE1C5DB290006DAA43 /* Saucer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Saucer.cpp; sourceTree = "<group>"; };
+		14AF05CF1C5DB290006DAA43 /* Saucer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Saucer.hpp; sourceTree = "<group>"; };
+		14AF05D11C5DB316006DAA43 /* Meteor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Meteor.cpp; sourceTree = "<group>"; };
+		14AF05D21C5DB316006DAA43 /* Meteor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Meteor.hpp; sourceTree = "<group>"; };
 		14CFA3451C32376E0040E97C /* emitter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emitter.hpp; sourceTree = "<group>"; };
 		14CFA3461C32376E0040E97C /* emitter_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = emitter_impl.hpp; sourceTree = "<group>"; };
 		14CFA3471C32376E0040E97C /* spira.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = spira.hpp; sourceTree = "<group>"; };
@@ -82,25 +94,33 @@
 				14DE59781C3388FB0044258A /* media */,
 				14107ABD1C2EEF64004F152A /* Supporting Files */,
 				14CFA3441C32376E0040E97C /* spira */,
-				14107ABF1C2EEF65004F152A /* ResourcePath.mm */,
-				14107AC11C2EEF65004F152A /* ResourcePath.hpp */,
-				14107AC21C2EEF65004F152A /* main.cpp */,
-				14107AD21C2F69C7004F152A /* Game.cpp */,
-				14107AD31C2F69C7004F152A /* Game.hpp */,
-				14107AD51C2F7151004F152A /* Player.cpp */,
-				14107AD61C2F7151004F152A /* Player.hpp */,
-				14DE59761C3378E60044258A /* ResourceManager.hpp */,
-				14DE59751C3378E60044258A /* ResourceManager_impl.hpp */,
-				14778D321C41F01F008FE691 /* Scene.cpp */,
-				14778D331C41F01F008FE691 /* Scene.hpp */,
-				148AE16F1C4B3EB70014A130 /* Collision.cpp */,
-				148AE1701C4B3EB70014A130 /* Collision.hpp */,
-				148AE1721C4B410C0014A130 /* Actor.cpp */,
 				148AE1731C4B410C0014A130 /* Actor.hpp */,
+				14AF05CC1C5DA9D6006DAA43 /* Actor_impl.hpp */,
+				148AE1721C4B410C0014A130 /* Actor.cpp */,
+				148AE1701C4B3EB70014A130 /* Collision.hpp */,
+				148AE16F1C4B3EB70014A130 /* Collision.cpp */,
 				1426EECD1C5B57F40017B486 /* Data.hpp */,
-				1426EECE1C5B658D0017B486 /* Enemy.cpp */,
+				14AF05CA1C5DA927006DAA43 /* Data.cpp */,
 				1426EECF1C5B658D0017B486 /* Enemy.hpp */,
+				1426EECE1C5B658D0017B486 /* Enemy.cpp */,
+				14107AD31C2F69C7004F152A /* Game.hpp */,
+				14107AD21C2F69C7004F152A /* Game.cpp */,
+				14107AC21C2EEF65004F152A /* main.cpp */,
+				14AF05D21C5DB316006DAA43 /* Meteor.hpp */,
+				14AF05D11C5DB316006DAA43 /* Meteor.cpp */,
+				14107AD61C2F7151004F152A /* Player.hpp */,
+				14107AD51C2F7151004F152A /* Player.cpp */,
+				14AF05CF1C5DB290006DAA43 /* Saucer.hpp */,
+				14AF05CE1C5DB290006DAA43 /* Saucer.cpp */,
+				14778D331C41F01F008FE691 /* Scene.hpp */,
+				14778D321C41F01F008FE691 /* Scene.cpp */,
+				14AF05C81C5D9C67006DAA43 /* Shoot.hpp */,
+				14AF05C71C5D9C67006DAA43 /* Shoot.cpp */,
+				14DE59751C3378E60044258A /* ResourceManager_impl.hpp */,
+				14DE59761C3378E60044258A /* ResourceManager.hpp */,
+				14107AC11C2EEF65004F152A /* ResourcePath.hpp */,
 				1426EED11C5B67C20017B486 /* Utils.hpp */,
+				14107ABF1C2EEF65004F152A /* ResourcePath.mm */,
 			);
 			path = "sfml-blueprint";
 			sourceTree = "<group>";
@@ -215,7 +235,11 @@
 				1426EED01C5B658D0017B486 /* Enemy.cpp in Sources */,
 				148AE1741C4B410C0014A130 /* Actor.cpp in Sources */,
 				14107AD71C2F7151004F152A /* Player.cpp in Sources */,
+				14AF05D01C5DB290006DAA43 /* Saucer.cpp in Sources */,
 				14107AD41C2F69C7004F152A /* Game.cpp in Sources */,
+				14AF05C91C5D9C67006DAA43 /* Shoot.cpp in Sources */,
+				14AF05CB1C5DA927006DAA43 /* Data.cpp in Sources */,
+				14AF05D31C5DB316006DAA43 /* Meteor.cpp in Sources */,
 				14107AC31C2EEF65004F152A /* main.cpp in Sources */,
 				14107AC01C2EEF65004F152A /* ResourcePath.mm in Sources */,
 			);

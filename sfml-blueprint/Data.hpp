@@ -13,6 +13,7 @@
 #include "ResourceManager.hpp"
 #include "ResourcePath.hpp"
 
+class Actor;
 class Data {
   public:
     Data() = delete;
@@ -20,11 +21,31 @@ class Data {
     Data& operator=(const Data&) = delete;
 
     static void init();
+    static void reset();
 
 
     // Resource data
     enum TEXTURES : int {
       PLAYER,
+      PLAYER_LIFE,
+      SHOOT_PLAYER,
+
+      SAUCER,
+      SMALL_SAUCER,
+      SHOOT_SAUCER,
+
+      BIG_METEOR_1,
+      BIG_METEOR_2,
+      BIG_METEOR_3,
+      BIG_METEOR_4,
+
+      MEDIUM_METEOR_1,
+      MEDIUM_METEOR_2,
+
+      SMALL_METEOR_1,
+      SMALL_METEOR_2,
+      SMALL_METEOR_3,
+      SMALL_METEOR_4,
     };
 
     static ResourceManager<sf::Texture, int> textures;
@@ -42,26 +63,5 @@ class Data {
   private:
     static void initTextures();
 };
-
-ResourceManager<sf::Texture, int> Data::textures;
-
-void Data::init() {
-  Data::initTextures();
-
-  // Persistent
-  Data::score = 0;
-  Data::lives = 3;
-
-  // Session
-  Data::player = nullptr;
-}
-
-void Data::addScore(int score) {
-  Data::score += score;
-}
-
-void Data::initTextures() {
-  textures.load(TEXTURES::PLAYER, resourcePath() + "ship.png");
-}
 
 #endif /* Data_h */

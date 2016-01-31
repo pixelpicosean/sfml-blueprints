@@ -7,6 +7,12 @@
 //
 
 #include "Game.hpp"
+#include "Data.hpp"
+#include "Utils.hpp"
+
+#include "Player.hpp"
+#include "Meteor.hpp"
+#include "Saucer.hpp"
 
 bool isCloseWindow(const sf::Event& evt) {
   return evt.type == sf::Event::Closed;
@@ -18,7 +24,8 @@ bool pressedEsc(const sf::Event& evt) {
 
 Game::Game(int w, int h):
   width(w), height(h),
-  _window(sf::VideoMode(w, h), "Asteroid")
+  _window(sf::VideoMode(w, h), "Asteroid"),
+  _scene(w, h)
 {
   // Force vsync for better result
   _window.setVerticalSyncEnabled(true);
@@ -36,12 +43,6 @@ Game::Game(int w, int h):
 }
 
 void Game::run(int minFPS) {
-  // Initialize
-  Data::init();
-
-  _player.setTexture(Data::textures.get(Data::TEXTURES::PLAYER));
-  _player.setPosition(width / 2, height / 2);
-
   // Setup timer
   const sf::Time TIME_PER_FRAME = sf::seconds(1.0f / minFPS);
 
@@ -64,44 +65,67 @@ void Game::run(int minFPS) {
   }
 }
 
+void Game::initLevel() {
+  for (int i = 0; i < 3; ++i) {
+    auto meteor = new BigMeteor(this->_scene);
+    do {
+      meteor->setPosition(lp::random(0.0f, this->_scene.getX()), lp::random(0.0f, this->_scene.getY()));
+    } while (this->_scene.isCollide(*meteor));
+
+    this->_scene.add(meteor);
+  }
+}
+
 void Game::processEvents() {
   sf::Event event;
   while (_window.pollEvent(event)) {
     events.emit(event);
 
-    if (event.type == sf::Event::KeyPressed) {
-      if (event.key.code == sf::Keyboard::Up) {
-        _player.isMoving = true;
-      }
-      else if (event.key.code == sf::Keyboard::Left) {
-        _player.rotation = -1;
-      }
-      else if (event.key.code == sf::Keyboard::Right) {
-        _player.rotation = 1;
-      }
-    }
-    else if (event.type == sf::Event::KeyReleased) {
-      if (event.key.code == sf::Keyboard::Up) {
-        _player.isMoving = false;
-      }
-      else if (event.key.code == sf::Keyboard::Left) {
-        _player.rotation = 0;
-      }
-      else if (event.key.code == sf::Keyboard::Right) {
-        _player.rotation = 0;
-      }
-    }
+//    if (event.type == sf::Event::KeyPressed) {
+//      if (event.key.code == sf::Keyboard::Up) {
+//        _player.isMoving = true;
+//      }
+//      else if (event.key.code == sf::Keyboard::Left) {
+//        _player.rotation = -1;
+//      }
+//      else if (event.key.code == sf::Keyboard::Right) {
+//        _player.rotation = 1;
+//      }
+//    }
+//    else if (event.type == sf::Event::KeyReleased) {
+//      if (event.key.code == sf::Keyboard::Up) {
+//        _player.isMoving = false;
+//      }
+//      else if (event.key.code == sf::Keyboard::Left) {
+//        _player.rotation = 0;
+//      }
+//      else if (event.key.code == sf::Keyboard::Right) {
+//        _player.rotation = 0;
+//      }
+//    }
   }
 }
 
 void Game::update(sf::Time delta) {
-  _player.update(delta);
+  this->_scene.update(delta);
+
+  if (Data::player == nullptr) {
+    Data::player = new Player(this->_scene);
+    Data::player->setPosition(this->_scene.getX(), this->_scene.getY());
+    this->_scene.add(Data::player);
+  }
 }
 
 void Game::render() {
-  _window.clear();
+  this->_window.clear();
+  this->_window.draw(_scene);
+  this->_window.display();
+}
 
-  _window.draw(_player);
+void Game::reset() {
+  this->_scene.clear();
 
-  _window.display();
+  Data::reset();
+
+  this->initLevel();
 }

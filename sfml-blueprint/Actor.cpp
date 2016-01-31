@@ -8,10 +8,10 @@
 
 #include "Actor.hpp"
 
-Actor::Actor(Data::TEXTURES texID, Scene& scene): _scene(scene) {
+Actor::Actor(Data::TEXTURES texID, Scene& scene): scene(scene) {
   sf::Texture& tex = Data::textures.get(texID);
-  _sprite.setTexture(tex);
-  _sprite.setOrigin(tex.getSize().x / 2, tex.getSize().y / 2);
+  sprite.setTexture(tex);
+  sprite.setOrigin(tex.getSize().x / 2, tex.getSize().y / 2);
 }
 
 bool Actor::isAlive() const {
@@ -19,9 +19,13 @@ bool Actor::isAlive() const {
 }
 
 const sf::Vector2f& Actor::getPosition() const {
-  return _sprite.getPosition();
+  return sprite.getPosition();
 }
 
 void Actor::onDestroy() {
   _alive = false;
+}
+
+void Actor::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+  target.draw(this->sprite, states);
 }

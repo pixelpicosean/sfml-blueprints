@@ -13,9 +13,7 @@
 
 #include "spira/spira.hpp"
 
-#include "Data.hpp"
-
-#include "Player.hpp"
+#include "Scene.hpp"
 
 class Game {
   public:
@@ -29,15 +27,20 @@ class Game {
 
     void run(int minFPS);
 
+    void initLevel();
+
   private:
     void processEvents();
     void update(sf::Time delta);
     void render();
 
+    void reset();
+
     sf::RenderWindow _window;
-    Player _player;
 
     spira::emitter<sf::Event> events;
+
+    Scene _scene;
 };
 
 #endif /* Game_hpp */

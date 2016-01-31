@@ -9,19 +9,19 @@
 #ifndef Player_hpp
 #define Player_hpp
 
-#include <cmath>
-
 #include "Actor.hpp"
 
+class Scene;
 class Player: public Actor {
   public:
     Player(const Player&) = delete;
     Player& operator=(const Player&) = delete;
+
     Player(Scene& scene);
 
     bool isCollide(const Actor& other) const override;
     void update(sf::Time dt) override;
-    void processEvents();
+    void processEvents() {}
     void shoot();
     void goToHyperspace();
     void onDestroy() override;

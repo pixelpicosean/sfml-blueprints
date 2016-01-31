@@ -16,11 +16,15 @@
 class Scene;
 class Actor : public sf::Drawable {
   public:
+    sf::Sprite sprite;
+    Scene& scene;
+
+  public:
     Actor(const Actor&) = delete;
     Actor& operator=(const Actor&) = delete;
 
     Actor(Data::TEXTURES texID, Scene& scene);
-    virtual ~Actor();
+    virtual ~Actor() {}
 
     virtual bool isAlive() const;
 
@@ -34,13 +38,13 @@ class Actor : public sf::Drawable {
     virtual void onDestroy();
 
   protected:
-    sf::Sprite _sprite;
     sf::Vector2f _impulse;
-    Scene& _scene;
     bool _alive;
 
   private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
+
+#include "Actor_impl.hpp"
 
 #endif /* Actor_hpp */
