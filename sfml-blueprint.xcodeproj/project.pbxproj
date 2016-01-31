@@ -12,7 +12,6 @@
 		14107AD41C2F69C7004F152A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD21C2F69C7004F152A /* Game.cpp */; };
 		14107AD71C2F7151004F152A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14107AD51C2F7151004F152A /* Player.cpp */; };
 		1426EED01C5B658D0017B486 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1426EECE1C5B658D0017B486 /* Enemy.cpp */; };
-		1426EED41C5B6AA80017B486 /* Saucer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1426EED21C5B6AA80017B486 /* Saucer.cpp */; };
 		14778D341C41F01F008FE691 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14778D321C41F01F008FE691 /* Scene.cpp */; };
 		148AE1711C4B3EB70014A130 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 148AE16F1C4B3EB70014A130 /* Collision.cpp */; };
 		148AE1741C4B410C0014A130 /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 148AE1721C4B410C0014A130 /* Actor.cpp */; };
@@ -34,8 +33,6 @@
 		1426EECE1C5B658D0017B486 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		1426EECF1C5B658D0017B486 /* Enemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
 		1426EED11C5B67C20017B486 /* Utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
-		1426EED21C5B6AA80017B486 /* Saucer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Saucer.cpp; sourceTree = "<group>"; };
-		1426EED31C5B6AA80017B486 /* Saucer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Saucer.hpp; sourceTree = "<group>"; };
 		14778D321C41F01F008FE691 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
 		14778D331C41F01F008FE691 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
 		148AE16F1C4B3EB70014A130 /* Collision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
@@ -104,8 +101,6 @@
 				1426EECE1C5B658D0017B486 /* Enemy.cpp */,
 				1426EECF1C5B658D0017B486 /* Enemy.hpp */,
 				1426EED11C5B67C20017B486 /* Utils.hpp */,
-				1426EED21C5B6AA80017B486 /* Saucer.cpp */,
-				1426EED31C5B6AA80017B486 /* Saucer.hpp */,
 			);
 			path = "sfml-blueprint";
 			sourceTree = "<group>";
@@ -216,7 +211,6 @@
 			files = (
 				148AE1711C4B3EB70014A130 /* Collision.cpp in Sources */,
 				14778D341C41F01F008FE691 /* Scene.cpp in Sources */,
-				1426EED41C5B6AA80017B486 /* Saucer.cpp in Sources */,
 				14DE59771C3378E60044258A /* ResourceManager_impl.hpp in Sources */,
 				1426EED01C5B658D0017B486 /* Enemy.cpp in Sources */,
 				148AE1741C4B410C0014A130 /* Actor.cpp in Sources */,
